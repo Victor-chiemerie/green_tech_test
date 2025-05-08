@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Themes/textThemes.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -60,6 +59,12 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                         // Sign In Tab
                         SingleChildScrollView(
                           child: Container(
+                            margin: EdgeInsets.only(
+                              left: width * 0.1,
+                              right: width * 0.1,
+                            ),
+                            alignment: Alignment.center,
+                            width: width * 0.8,
                             color: Colors.blue,
                             padding: EdgeInsets.all(16),
                             child: Center(child: Text('Sign In Content')),
@@ -68,6 +73,12 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                         // Sign Up Tab
                         SingleChildScrollView(
                           child: Container(
+                            margin: EdgeInsets.only(
+                              left: width * 0.1,
+                              right: width * 0.1,
+                            ),
+                            alignment: Alignment.center,
+                            width: width * 0.8,
                             color: Colors.green,
                             padding: EdgeInsets.all(16),
                             child: Center(child: Text('Sign Up Content')),
