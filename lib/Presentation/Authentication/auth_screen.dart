@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Themes/textThemes.dart';
+import 'package:green_tech_test/Presentation/Authentication/signup_screen.dart';
+import '../Themes/textThemes.dart';
+import 'signin_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -65,9 +67,8 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                             ),
                             alignment: Alignment.center,
                             width: width * 0.8,
-                            color: Colors.blue,
-                            padding: EdgeInsets.all(16),
-                            child: Center(child: Text('Sign In Content')),
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Center(child: SigninScreen()),
                           ),
                         ),
                         // Sign Up Tab
@@ -79,9 +80,8 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                             ),
                             alignment: Alignment.center,
                             width: width * 0.8,
-                            color: Colors.green,
-                            padding: EdgeInsets.all(16),
-                            child: Center(child: Text('Sign Up Content')),
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Center(child: SignupScreen()),
                           ),
                         ),
                       ],
