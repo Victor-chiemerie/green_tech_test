@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 
@@ -24,7 +25,6 @@ class FirebaseRepository {
 
   /// Sign up
   Future<myUser> signUp(
-    BuildContext context,
     myUser myUser,
     String password,
   ) async {
@@ -50,7 +50,6 @@ class FirebaseRepository {
 
   // Sign In
   Future<void> signIn(
-    BuildContext context,
     String email,
     String password,
   ) async {
@@ -61,7 +60,6 @@ class FirebaseRepository {
       );
     } catch (error) {
       debugPrint('Error signing in: $error');
-      // Handle error appropriately
       rethrow;
     }
   }
@@ -73,18 +71,6 @@ class FirebaseRepository {
     } catch (error) {
       debugPrint("Error logging out: $error");
       rethrow;
-    }
-  }
-
-  // Save user data
-  Future<void> addUser(String userId, String name, String email) async {
-    try {
-      await userCollection.doc(email).set({
-        'name': name,
-        'email': email,
-      });
-    } catch (e) {
-      debugPrint('Error adding user: $e');
     }
   }
 

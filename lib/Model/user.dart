@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
 import 'package:equatable/equatable.dart';
 
 class myUser extends Equatable {
@@ -11,6 +11,13 @@ class myUser extends Equatable {
     required this.email,
     required this.username,
   });
+
+  /// Empty user which represents an unauthenticated user
+  static myUser empty = myUser(
+    id: "",
+    email: "",
+    username: "",
+  );
 
   myUser copyWith({
     String? id,
