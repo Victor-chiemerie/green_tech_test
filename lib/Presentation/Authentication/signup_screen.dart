@@ -38,12 +38,7 @@ class _SignupScreenState extends State<SignupScreen> {
           setState(() {
             signUpRequired = false;
           });
-
-          print("Signed Up Successfully");
-          // pop till home screen TODO
-          // Navigator.popUntil(context, (route) {
-          //   return route.isFirst;
-          // });
+          debugPrint("Signed Up Successfully");
         } else if (state.status == SignUpStatus.processing) {
           setState(() {
             signUpRequired = true;

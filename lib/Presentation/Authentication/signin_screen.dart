@@ -31,12 +31,7 @@ class _SigninScreenState extends State<SigninScreen> {
           setState(() {
             signInRequired = false;
           });
-
-          print("Signed In Successfully");
-          // pop till home screen TODO
-          // Navigator.popUntil(context, (route) {
-          //   return route.isFirst;
-          // });
+          debugPrint("Signed In Successfully");
         } else if (state.status == SignInStatus.processing) {
           setState(() {
             signInRequired = true;
