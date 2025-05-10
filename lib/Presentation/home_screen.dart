@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:green_tech_test/Logic/Sign%20In/sign_in_cubit.dart';
+import 'package:green_tech_test/Logic/cubits.dart';
 import 'package:green_tech_test/Model/pictures.dart';
 import 'package:green_tech_test/Presentation/artwork_screen.dart';
 
@@ -16,7 +15,12 @@ class HomeScreen extends StatelessWidget {
     List<Picture> artworks = pictureList;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: BlocBuilder<MyUserCubit, MyUserState>(
+          builder: (context, state) {
+            final name = state.user.username;
+            return Text("Welcome $name");
+          },
+        ),
         actions: [
           IconButton(
             onPressed: () {
